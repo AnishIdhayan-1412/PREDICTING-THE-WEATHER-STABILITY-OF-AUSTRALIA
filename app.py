@@ -35,7 +35,7 @@ feature_cols = artifacts['feature_cols']
 print("Model loaded successfully!")
 
 # Groq API Config
-GROQ_API_KEY = os.getenv('GROQ_API_KEY', 'gsk_your_api_key_here')
+GROQ_API_KEY = os.getenv('GROQ_API_KEY')
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 
 EXPECTED_FEATURES = [
@@ -46,7 +46,6 @@ EXPECTED_FEATURES = [
     'Temp9am', 'Temp3pm', 'RainToday'
 ]
 
-@app.route('/')
 @app.route('/')
 def home():
     return '''
